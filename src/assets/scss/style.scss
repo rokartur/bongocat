@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  background: #1F1D36;
+}
+
+.header {
+  height: 144px;
+  margin-top: 20px;
+
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 45px;
+
+  color: #FFFFFF;
+}
+
+.avatar_to_download {
+  border-radius: 100%;
+  width: 250px;
+  height: 250px;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  display: inline-flex;
+  margin-top: 44px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 0;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  background: #E9A6A6;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  color: #3F3351;
+
+  transition: all 0.3s ease-out;
+
+  svg {
+    background: transparent;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover {
+    color: #E9A6A6;
+    background-color: #3F3351;
+    transform: translateY(-6px);
+
+    svg {
+      fill: #E9A6A6;
+    }
+  }
+}
+
+.button_text,
+.button_icon {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.button_text {
+  padding: 0 0 0 14px;
+}
+
+.button_icon {
+  padding: 0 0 0 19px;
+}
+
+.button_active {
+  color: #E9A6A6;
+  background-color: #3F3351;
+  transform: translateY(-6px);
+
+  svg {
+    fill: #E9A6A6;
+  }
+}
+
+.picker {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #FFFFFF;
+
+  .color {
+    flex-grow: 4;
+  }
+}
+
+table {
+  border-radius: 15px;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 50px 35px;
+  background: #19172f;
+}
+
+input[type=color] {
+  width: 100px;
+  height: 40px;
+  border: white;
+  background: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+label {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  display: flex;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 0 0 0 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background: #E9A6A6;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+
+  font-size: 14px;
+  text-align: center;
+  align-items: center;
+  color: #3F3351;
+
+  transition: all 0.3s ease-out;
+
+  &:hover,
+  &:active {
+    color: #E9A6A6;
+    background-color: #3F3351;
+  }
+}
+
+.footer_span {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 50px;
+  width: 38px;
+  color: white;
+  text-align: left;
+  margin-left: 50px;
+  justify-content: center;
+
+  #link {
+    height: 29px;
+  }
+
+  #info {
+    margin-left: 4px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+  }
+  #logo_discord {
+    transition: all 0.3s ease-out;
+  }
+  #info:hover,
+  #info:active,
+  #logo_discord:hover {
+    fill: #E9A6A6;
+  }
+}
