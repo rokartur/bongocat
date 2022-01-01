@@ -183,12 +183,12 @@ label {
     transition: all 0.3s ease-out;
     cursor: pointer;
   }
-  #logo_discord {
+  #footer_logo {
     transition: all 0.3s ease-out;
   }
   #info:hover,
   #info:active,
-  #logo_discord:hover {
+  #footer_logo:hover {
     fill: #E9A6A6;
   }
 }
