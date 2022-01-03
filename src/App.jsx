@@ -4,6 +4,8 @@ import {download} from "./assets/components/Download";
 import {getRandomNumber, getRgb, rgbToHex} from "./assets/components/rgbToHex";
 import {consoleCat} from "./assets/components/ConsoleCat";
 
+consoleCat()
+
 export default function App() {
     const [model, setModel] = useState(0);
 
@@ -18,8 +20,6 @@ export default function App() {
 
     const [colorFirstBackground, setFirstColorBackground] = useState("#000000");
     const [colorSecondBackground, setSecondColorBackground] = useState("#000000");
-
-    consoleCat()
 
     const handleGenerate = () => {
         const color_1 = {
