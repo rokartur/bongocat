@@ -1,5 +1,8 @@
 import React, {useState} from "react";
-import './assets/scss/style.scss';
+import "./assets/scss/style.scss";
+import {download} from "./assets/components/Download";
+import {getRandomNumber, getRgb, rgbToHex} from "./assets/components/rgbToHex";
+import {consoleCat} from "./assets/components/ConsoleCat";
 
 export default function App() {
     const [model, setModel] = useState(0);
@@ -16,20 +19,7 @@ export default function App() {
     const [colorFirstBackground, setFirstColorBackground] = useState("#000000");
     const [colorSecondBackground, setSecondColorBackground] = useState("#000000");
 
-    function getRandomNumber(min, max) {
-        return Math.floor(Math.random()*(max-min+1)+min);
-    }
-
-    const getRgb = () => Math.floor(Math.random() * 256);
-
-    const rgbToHex = (r, g, b) =>
-        '#' +
-        [r, g, b]
-            .map(x => {
-                const hex = x.toString(16);
-                return hex.length === 1 ? '0' + hex : hex;
-            })
-            .join('');
+    consoleCat()
 
     const handleGenerate = () => {
         const color_1 = {
@@ -84,38 +74,14 @@ export default function App() {
         setModel(getRandomNumber(0, 2))
     };
 
-    function download() {
-        const svg = document.querySelector('svg');
-        const data = (new XMLSerializer()).serializeToString(svg);
-        const canvas = document.createElement('canvas');
-        canvg(canvas, data, {
-            renderCallback: function () {
-                canvas.toBlob(function (blob) {
-                    console.log(window.URL.createObjectURL(blob));
-                    if (window.navigator.msSaveOrOpenBlob) {
-                        window.navigator.msSaveBlob(blob, "bongo cat avatar.png");
-                    }
-                    else {
-                        const elem = window.document.createElement('a');
-                        elem.href = window.URL.createObjectURL(blob);
-                        elem.download = "bongo cat avatar.png";
-                        document.body.appendChild(elem);
-                        elem.click();
-                        document.body.removeChild(elem);
-                    }
-                });
-            }
-        });
-    }
-
-  return (
-      <div className="App">
-          <header className="header">
+    return (
+        <div className="App">
+            <header className="header">
               BONGO CAT
               <br/>
               AVATAR GENERATOR
-          </header>
-          <div className="model">
+            </header>
+            <div className="model">
               {model === 0 ? <svg className="avatar_to_download"
                                   width="1024"
                                   height="1024"
@@ -234,17 +200,17 @@ export default function App() {
                   <path d="M731.76 590.281C738.349 590.342 753.346 598.117 757.613 603.132C762.678 609.089 764.817 615.965 766.28 622.386C763.814 621.567 761.348 620.748 758.882 619.929C765.134 628.98 764.47 642.016 761.035 652.467C757.6 662.918 754.777 667.523 741.993 675.65C729.575 681.485 726.232 682.001 714.944 681.363C703.654 680.724 691.457 675.161 686.304 665.098C688.788 665.127 691.272 665.154 693.756 665.183C676.234 651.559 670.466 624.892 680.791 605.247C682.614 613.467 682.435 616.127 689.182 621.167C686.901 616.809 692.853 601.426 705.379 595.121C712.073 591.753 720.203 589.404 727.694 589.661" fill="#EDEDED"/>
                   <path d="M762.261 651.59C765.192 640.987 765.135 628.982 758.883 619.93C758.883 619.93 759.503 623.956 759.516 629.631C758.277 636.629 754.551 643.194 749.024 647.677C751.705 647.883 754.407 647.81 757.08 647.521C755.115 653.805 751.696 659.754 745.802 663.575C733.012 671.868 712.009 670.344 705.525 663.427C708.128 661.272 709.999 658.249 710.762 654.955C704.333 656.234 697.565 653.397 692.91 648.782C688.255 644.169 685.624 640.229 682.982 634.229C680.365 628.278 678.041 622.472 680.431 606.019C670.649 625.589 676.46 651.736 693.755 665.183C691.271 665.154 688.787 665.125 686.303 665.098C691.458 675.162 702.594 681.058 713.846 682.174C725.021 683.282 731.279 682.834 742.945 676.996C757.915 666.959 759.69 660.905 762.261 651.59Z" fill="#DDDDDD"/>
               </svg> : ""}
-          </div>
-          <br/>
-          <button className="button_download" onClick={() => download()}>
+            </div>
+            <br/>
+            <button className="button_download" onClick={() => download()}>
               <span className="button_icon">
                   <svg width="22" height="26" viewBox="0 0 22 26" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22 9.17448H15.7163V0H6.28375V9.17448H0L11 19.8792L22 9.17448V9.17448ZM0 22.9396V26H22V22.9396H0Z"/>
                   </svg>
               </span>
               <span className="button_text">Download</span>
-          </button>
-          <br/>
+            </button>
+            <br/>
         <div className="buttons_group_1">
             <button className={model === 0 ? "button_active" : "button_color"}
                     onClick={() => {setModel(0)}}>
@@ -279,36 +245,36 @@ export default function App() {
           <div className="buttons_group_2">
               <button className={picker === 0 ? "button_active" : "button_color"}
                       onClick={() => {setColorPicker(0)}}>
-                  <span className="button_icon">
-                      <svg width="29" height="27" viewBox="0 0 29 27" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M25.7782 18.2647C25.7782 18.2647 22.5564 21.7112 22.5564 23.8235C22.5564 25.5706 24.0062 27 25.7782 27C27.5502 27 29 25.5706 29 23.8235C29 21.7112 25.7782 18.2647 25.7782 18.2647ZM3.56409 15.8824L11.2802 8.27471L18.9964 15.8824H3.56409ZM21.8477 14.1988L7.44633 0L5.17498 2.23941L9.00889 6.01941L0.712818 14.1988C-0.237606 15.0882 -0.237606 16.6288 0.712818 17.5659L9.5727 26.3012C10.0399 26.7618 10.6681 27 11.2802 27C11.8924 27 12.5206 26.7618 12.9878 26.3012L21.8477 17.5659C22.7981 16.6288 22.7981 15.0882 21.8477 14.1988Z"/>
-                      </svg>
-                  </span>
-                  <span className="button_text">Color</span>
-              </button>
+              <span className="button_icon">
+                  <svg width="29" height="27" viewBox="0 0 29 27" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M25.7782 18.2647C25.7782 18.2647 22.5564 21.7112 22.5564 23.8235C22.5564 25.5706 24.0062 27 25.7782 27C27.5502 27 29 25.5706 29 23.8235C29 21.7112 25.7782 18.2647 25.7782 18.2647ZM3.56409 15.8824L11.2802 8.27471L18.9964 15.8824H3.56409ZM21.8477 14.1988L7.44633 0L5.17498 2.23941L9.00889 6.01941L0.712818 14.1988C-0.237606 15.0882 -0.237606 16.6288 0.712818 17.5659L9.5727 26.3012C10.0399 26.7618 10.6681 27 11.2802 27C11.8924 27 12.5206 26.7618 12.9878 26.3012L21.8477 17.5659C22.7981 16.6288 22.7981 15.0882 21.8477 14.1988Z"/>
+                  </svg>
+              </span>
+              <span className="button_text">Color</span>
+            </button>
 
               <button className={picker === 1 ? "button_active" : "button_gradient"}
                       onClick={() => {setColorPicker(1)}}>
-                  <span className="button_icon">
-                      <svg width="28" height="28" viewBox="0 0 28 28" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9.33333 15.5556V12.4444H12.4444V15.5556H9.33333ZM12.4444 18.6667V15.5556H15.5556V18.6667H12.4444ZM12.4444 12.4444V9.33333H15.5556V12.4444H12.4444ZM9.33333 9.33333V6.22222H12.4444V9.33333H9.33333ZM9.33333 21.7778V18.6667H12.4444V21.7778H9.33333ZM0 3.11111V24.8889C0 26.6 1.4 28 3.11111 28H24.8889C26.6 28 28 26.6 28 24.8889V3.11111C28 1.4 26.6 0 24.8889 0H3.11111C1.4 0 0 1.4 0 3.11111ZM23.3333 18.6667V21.7778H20.2222V18.6667H23.3333ZM23.3333 12.4444V15.5556H20.2222V12.4444H23.3333ZM23.3333 6.22222V9.33333H20.2222V6.22222H23.3333ZM12.4444 3.11111V6.22222H15.5556V3.11111H18.6667V6.22222H15.5556V9.33333H18.6667V12.4444H15.5556V15.5556H18.6667V18.6667H15.5556V21.7778H18.6667V24.8889H15.5556V21.7778H12.4444V24.8889H3.11111V3.11111H12.4444Z"/>
-                      </svg>
-                  </span>
-                  <span className="button_text">Gradient</span>
-              </button>
+              <span className="button_icon">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.33333 15.5556V12.4444H12.4444V15.5556H9.33333ZM12.4444 18.6667V15.5556H15.5556V18.6667H12.4444ZM12.4444 12.4444V9.33333H15.5556V12.4444H12.4444ZM9.33333 9.33333V6.22222H12.4444V9.33333H9.33333ZM9.33333 21.7778V18.6667H12.4444V21.7778H9.33333ZM0 3.11111V24.8889C0 26.6 1.4 28 3.11111 28H24.8889C26.6 28 28 26.6 28 24.8889V3.11111C28 1.4 26.6 0 24.8889 0H3.11111C1.4 0 0 1.4 0 3.11111ZM23.3333 18.6667V21.7778H20.2222V18.6667H23.3333ZM23.3333 12.4444V15.5556H20.2222V12.4444H23.3333ZM23.3333 6.22222V9.33333H20.2222V6.22222H23.3333ZM12.4444 3.11111V6.22222H15.5556V3.11111H18.6667V6.22222H15.5556V9.33333H18.6667V12.4444H15.5556V15.5556H18.6667V18.6667H15.5556V21.7778H18.6667V24.8889H15.5556V21.7778H12.4444V24.8889H3.11111V3.11111H12.4444Z"/>
+                  </svg>
+              </span>
+              <span className="button_text">Gradient</span>
+            </button>
 
               <button className={picker === 2 ? "button_active" : "button_gradient"}
                       onClick={handleGenerate}>
-                  <span className="button_icon">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9.88749 7.75625L2.1125 0L0 2.1125L7.75625 9.86871L9.88749 7.75625ZM15.75 0L18.8125 3.0625L0 21.8875L2.1125 24L20.9375 5.1875L24 8.25V0H15.75ZM16.2437 14.1125L14.1313 16.225L18.825 20.9187L15.75 24H24V15.75L20.9375 18.8125L16.2437 14.1125Z"/>
-                      </svg>
-                  </span>
-                  <span className="button_text">Random</span>
-              </button>
+              <span className="button_icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="#3F3351" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.88749 7.75625L2.1125 0L0 2.1125L7.75625 9.86871L9.88749 7.75625ZM15.75 0L18.8125 3.0625L0 21.8875L2.1125 24L20.9375 5.1875L24 8.25V0H15.75ZM16.2437 14.1125L14.1313 16.225L18.825 20.9187L15.75 24H24V15.75L20.9375 18.8125L16.2437 14.1125Z"/>
+                  </svg>
+              </span>
+              <span className="button_text">Random</span>
+            </button>
           </div>
           <br/>
-          <div className="picker">
+            <div className="picker">
               {picker === 0 ? <table className="color">
                   <tr>
                       <th>Body</th>
@@ -361,7 +327,8 @@ export default function App() {
                                  onInput={(ev) => setSecondColorBackground(ev.target.value)}/></th>
                   </tr>
               </table> : ""}
-              <span className="footer_span">
+              <h6>Made with ❤️ by <a id="credits" href="https://discord.com/users/432622667787665419" target="_blank">arwat</a>️</h6>
+                <span className="footer_span">
                   <a href="https://github.com/arwwat/bongocat.xyz" id="link" target="_blank">
                       <svg id="footer_logo" width="36" height="36" viewBox="0 0 36 36" fill="white" xmlns="http://www.w3.org/2000/svg">
                           <path d="M18 0C8.05982 0 0 8.26875 0 18.458C0 26.6143 5.15893 33.525 12.3107 35.9679C12.4232 35.992 12.5196 36 12.6161 36C13.283 36 13.5402 35.5098 13.5402 35.0839C13.5402 34.642 13.5241 33.4848 13.5161 31.942C12.8411 32.0946 12.2384 32.1589 11.7 32.1589C8.23661 32.1589 7.44911 29.467 7.44911 29.467C6.62946 27.3375 5.44821 26.767 5.44821 26.767C3.88125 25.6661 5.44018 25.6339 5.56071 25.6339H5.56875C7.37679 25.7946 8.325 27.5464 8.325 27.5464C9.225 29.1214 10.4304 29.5634 11.5071 29.5634C12.3509 29.5634 13.1143 29.2902 13.5643 29.0812C13.725 27.892 14.1911 27.0804 14.7054 26.6143C10.7116 26.1482 6.50893 24.5652 6.50893 17.4937C6.50893 15.4768 7.20804 13.8295 8.35714 12.5438C8.17232 12.0777 7.55357 10.1973 8.53393 7.65804C8.53393 7.65804 8.6625 7.61786 8.93571 7.61786C9.58661 7.61786 11.0571 7.86696 13.4839 9.55446C14.9223 9.14464 16.4571 8.94375 17.992 8.93571C19.5187 8.94375 21.0616 9.14464 22.5 9.55446C24.9268 7.86696 26.3973 7.61786 27.0482 7.61786C27.3214 7.61786 27.45 7.65804 27.45 7.65804C28.4304 10.1973 27.8116 12.0777 27.6268 12.5438C28.7759 13.8375 29.475 15.4848 29.475 17.4937C29.475 24.5812 25.2643 26.1402 21.2545 26.5982C21.8973 27.1687 22.4759 28.2937 22.4759 30.0134C22.4759 32.4804 22.4518 34.4732 22.4518 35.0759C22.4518 35.5098 22.7009 36 23.3679 36C23.4643 36 23.5768 35.992 23.6893 35.9679C30.8491 33.525 36 26.6063 36 18.458C36 8.26875 27.9402 0 18 0Z"/>
@@ -374,7 +341,7 @@ export default function App() {
                       </svg>
                   </a>
               </span>
-          </div>
-      </div>
+            </div>
+        </div>
   );
 }

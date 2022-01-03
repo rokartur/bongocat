@@ -192,3 +192,13 @@ label {
     fill: #E9A6A6;
   }
 }
+
+#credits {
+  text-decoration: none;
+  color: #E9A6A6;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: white;
+  }
+}
