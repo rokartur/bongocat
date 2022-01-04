@@ -14,7 +14,7 @@ body {
   filter: drop-shadow(10px 10px 100px rgba(0, 0, 0, 0.2));
 }
 
-.group_buttons_tools {
+.buttons_tools {
   .button_items_tools {
     width: 115px;
     height: 40px;
@@ -70,7 +70,7 @@ body {
   }
 }
 
-.group_buttons_apperance {
+.buttons_apperance {
   margin: 40px 0 0 0;
   display: flex;
   justify-content: center;
@@ -147,19 +147,20 @@ body {
 .models {
   margin: 0 0 0 55px;
 
-  .model_list {
+  .model_picker {
+    margin: 25px 0 0 0;
+    padding: 20px 20px 20px 20px;
     background: #0000001A;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-
     justify-content: center;
-    margin: 20px 0 0 0;
-    padding: 20px 20px 0 20px;
     border-radius: 10px;
 
-    button {
-      display: inline-block;
+    .hats,
+    .templates {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
 
+    button {
       text-decoration: none;
       border: none;
       outline: none;
@@ -168,7 +169,7 @@ body {
 
       width: 50px;
       height: 50px;
-      margin: 0 10px 20px 10px;
+      margin: 10px 10px 10px 10px;
       border-radius: 5px;
 
       background: #E9A6A6;
@@ -181,6 +182,16 @@ body {
         transition: all 0.3s ease-out;
       }
 
+      .button_text {
+        font-family: Poppins, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 36px;
+        color: #3F3351;
+        transition: all 0.3s ease-out;
+      }
+
       &:hover {
         color: #E9A6A6;
         background-color: #3F3351;
@@ -189,12 +200,15 @@ body {
         svg {
           fill: #E9A6A6;
         }
+        .button_text {
+          color: #E9A6A6;
+        }
       }
     }
   }
 }
 
-.picker {
+.color_picker {
   margin: 25px 0 0 0;
   padding: 20px 20px 20px 20px;
   font-family: Poppins, sans-serif;
