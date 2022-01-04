@@ -230,3 +230,46 @@ input[type="color"]::-webkit-color-swatch {
   box-sizing: border-box;
   border-radius: 5px;
 }
+
+.credits {
+  font-family: Poppins, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  color: #FFFFFF;
+
+  #profile {
+    text-decoration: none;
+    color: #E9A6A6;
+
+    transition: all 0.2s ease-out;
+  }
+
+  #profile:hover {
+    color: #FFFFFF;
+  }
+}
+
+#link {
+  margin: 0 10px 0 10px;
+}
+
+#link:hover {
+  #footer_logo {
+    transition: all 0.3s ease-out;
+  }
+
+  #footer_logo path :hover {
+    stroke: #E9A6A6;
+  }
+}
+
+#logo_path {
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+#logo_path:hover {
+  stroke: #E9A6A6;
+}
