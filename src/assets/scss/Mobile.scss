@@ -281,21 +281,12 @@
   }
 
   #link:hover {
-    #footer_logo {
+    svg {
       transition: all 0.3s ease-out;
     }
 
-    #footer_logo path :hover {
-      stroke: #E9A6A6;
+    svg:hover {
+      fill: #E9A6A6;
     }
-  }
-
-  #logo_path {
-    transition: all 0.3s ease-out;
-    cursor: pointer;
-  }
-
-  #logo_path:hover {
-    stroke: #E9A6A6;
   }
 }
