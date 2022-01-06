@@ -75,7 +75,7 @@ export default function App() {
         setSecondColorBody(rgbToHex(color_5.r, color_5.g, color_5.b));
         setFirstColorBackground(rgbToHex(color_6.r, color_6.g, color_6.b));
         setSecondColorBackground(rgbToHex(color_7.r, color_7.g, color_7.b));
-        setModel(getRandomNumber(0, 5))
+        setModel(getRandomNumber(0, 6))
     };
 
     return (
