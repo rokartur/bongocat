@@ -8,5 +8,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="canvas-to-blob" level="application" />
+    <orderEntry type="library" name="canvg" level="application" />
+    <orderEntry type="library" name="stackblur-canvas" level="application" />
   </component>
 </module>
