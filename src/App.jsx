@@ -4,6 +4,7 @@ import "./assets/scss/Mobile.scss";
 import {download} from "./assets/components/Download";
 import {getRandomNumber, getRgb, rgbToHex} from "./assets/components/rgbToHex";
 import {consoleCat} from "./assets/components/ConsoleCat";
+import themes from "./assets/components/Themes";
 
 consoleCat()
 
@@ -78,8 +79,23 @@ export default function App() {
         setModel(getRandomNumber(0, 6))
     };
 
+    const [style] = useState(themes[Math.floor(Math.random()*themes.length)]);
+
     return (
         <div className="App">
+            <style jsx global>
+                {`
+                  :root {
+                    --background: ${style.background};
+
+                    --button_primary: ${style.button_primary};
+                    --button_hover: ${style.button_hover};
+
+                    --font_primary: ${style.font_primary};
+                    --font_hover: ${style.font_hover};
+                }
+                `}
+            </style>
             <div className="preview">
                 {model === 0 ? <svg className="avatar_to_download"
                                   width="1024"
