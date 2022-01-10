@@ -16,7 +16,8 @@
   }
 
   .button_random,
-  .button_download {
+  .button_download,
+  .button_change_style {
     display: none;
   }
 
@@ -36,7 +37,8 @@
     }
 
     .mobile_button_random,
-    .mobile_button_download {
+    .mobile_button_download,
+    .mobile_button_change_style {
       text-decoration: none;
       border: none;
       outline: none;
