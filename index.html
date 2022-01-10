@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/assets/images/favicon.ico" />
-    <link rel="manifest" href="./manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" href="/src/assets/images/favicon.ico">
     <title>bongocat.xyz · Avatar Generator</title>
@@ -18,14 +17,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.4/rgbcolor.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stackblur-canvas/1.4.1/stackblur.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js"></script>
-    <script>
-      if('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('serviceWorkier.js')
-                  .then((reg) => console.log('Success: ', reg.scope))
-                  .catch((err) => console.log('Failure: ', err));
-        })
-      }
-    </script>
   </body>
 </html>
