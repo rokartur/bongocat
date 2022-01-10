@@ -148,10 +148,12 @@ export default function App() {
                         <circle id="left_eye" cx="395" cy="486" r="13" fill={colorFace}/>
                         <circle id="right_eye" cx="556" cy="537" r="13" fill={colorFace}/>
                         <path id="face"
-                              d="M442 512.104C463.832 504.062 473.821 507.264 487 525.604"
+                              d="M442 512C464.56 504.568 474.351 507.521 487 525.5C474.475 507.894 464.731 504.648 442 512Z"
                               stroke={colorFace}
-                              strokeWidth="10"
-                              strokeLinecap="round"/>
+                              strokeWidth="9"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"/>
+
                     </> : ""}
 
 
