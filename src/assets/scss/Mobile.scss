@@ -70,7 +70,7 @@
       &:hover {
         color: var(--font_hover);
         background: var(--button_hover);
-        transform: translateY(-3.5px);
+        transform: scale(0.9);
 
         svg {
           fill: var(--font_hover);
@@ -130,7 +130,7 @@
       &:hover {
         color: var(--font_hover);
         background: var(--button_hover);
-        transform: translateY(-3.5px);
+        transform: scale(0.9);
 
         svg {
           fill: var(--font_hover);
@@ -142,7 +142,7 @@
   #button_active {
     color: var(--font_hover);
     background: var(--button_hover);
-    transform: translateY(-3px);
+    transform: scale(0.9);
 
     svg {
       fill: var(--font_hover);
@@ -205,7 +205,7 @@
         &:hover {
           color: var(--font_hover);
           background: var(--button_hover);
-          transform: translateY(-2px);
+          transform: scale(0.9);
 
           svg {
             fill: var(--font_hover);
@@ -290,6 +290,7 @@
     }
 
     svg:hover {
+      transform: scale(0.9);
       fill: var(--button_primary);
     }
   }

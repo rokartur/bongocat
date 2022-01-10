@@ -67,7 +67,7 @@ body {
     &:hover {
       color: var(--font_hover);
       background: var(--button_hover);
-      transform: translateY(-3.5px);
+      transform: scale(0.9);
 
       svg {
         fill: var(--font_hover);
@@ -104,6 +104,7 @@ body {
 
   &:hover {
     background: var(--button_hover);
+    transform: scale(0.8);
 
     svg {
       fill: var(--font_hover);
@@ -164,7 +165,7 @@ body {
     &:hover {
       color: var(--font_hover);
       background: var(--button_hover);
-      transform: translateY(-3.5px);
+      transform: scale(0.9);
 
       svg {
         fill: var(--font_hover);
@@ -176,7 +177,7 @@ body {
 #button_active {
   color: var(--font_hover);
   background: var(--button_hover);
-  transform: translateY(-3px);
+  transform: scale(0.9);
 
   svg {
     fill: var(--font_hover);
@@ -239,7 +240,7 @@ body {
       &:hover {
         color: var(--font_hover);
         background: var(--button_hover);
-        transform: translateY(-2px);
+        transform: scale(0.9);
 
         svg {
           fill: var(--font_hover);
@@ -318,6 +319,7 @@ input[type="color"]::-webkit-color-swatch {
   }
 
   svg:hover {
+    transform: scale(0.9);
     fill: var(--button_primary);
   }
 }
