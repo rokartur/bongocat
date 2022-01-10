@@ -78,6 +78,7 @@ export default function App() {
         setFirstColorBackground(rgbToHex(color_6.r, color_6.g, color_6.b));
         setSecondColorBackground(rgbToHex(color_7.r, color_7.g, color_7.b));
         setHat(getRandomNumber(0, 7))
+        setFace(getRandomNumber(0, 2))
     };
 
     const [style, setStyle] = useState(themes[Math.floor(Math.random()*themes.length)]);
