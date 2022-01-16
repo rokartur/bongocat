@@ -1,0 +1,43 @@
+.footer_button {
+  display: inline-flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background: transparent;
+  outline: currentcolor none 0;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  text-align: center;
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+  padding: 8px;
+  overflow: visible;
+  transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  height: 35px;
+  width: 35px;
+  border: 1px solid rgb(19, 47, 76);
+  border-radius: 10px;
+  color: rgb(102, 178, 255);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgb(22, 55, 89);
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgb(30, 77, 126);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

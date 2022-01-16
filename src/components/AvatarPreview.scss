@@ -1,0 +1,11 @@
+.preview {
+  display: flex;
+  justify-content: center;
+
+  .avatar {
+    margin: 50px 0 40px 0;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+  }
+}
