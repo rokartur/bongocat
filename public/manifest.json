@@ -1,6 +1,7 @@
 {
   "short_name": "bongocat.xyz",
   "name": "bongocat.xyz · Avatar Generator",
+  "description": "You don't have an avatar? Create it!",
   "icons": [
     {
       "src": "images/logo.png",

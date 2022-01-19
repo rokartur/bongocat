@@ -23,8 +23,8 @@
       if('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./serviceWorker.js')
-                  .then((reg) => console.log('Success: ', reg.scope))
-                  .catch((err) => console.log('Failure: ', err));
+                  .then((registration) => console.log('Success: ', registration.scope))
+                  .catch((error) => console.log('Failure: ', error));
         })
       }
     </script>
