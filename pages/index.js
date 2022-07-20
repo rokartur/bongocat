@@ -8,6 +8,9 @@ import {download} from "../scripts/download";
 import {AvatarHat} from "../components/avatar/avatarHat";
 import {AvatarMouth} from "../components/avatar/avatarMouth";
 import {AvatarEyes} from "../components/avatar/avatarEyes";
+import {consoleCat} from "../scripts/consoleCat";
+
+consoleCat()
 
 export default function Home() {
 
