@@ -1,0 +1,76 @@
+$white: #FFFFFF;
+$black: #000000;
+
+$neutral-50: #FAFAFA;
+$neutral-100: #F5F5F5;
+$neutral-200: #E5E5E5;
+$neutral-300: #D4D4D4;
+$neutral-400: #A3A3A3;
+$neutral-500: #737373;
+$neutral-600: #525252;
+$neutral-700: #404040;
+$neutral-800: #262626;
+$neutral-900: #181616;
+
+$primary-50: #EEF2FF;
+$primary-100: #E0E7FF;
+$primary-200: #C7D2FE;
+$primary-300: #A5B4FC;
+$primary-400: #818CF8;
+$primary-500: #6366F1;
+$primary-600: #4F46E5;
+$primary-700: #4337C9;
+$primary-800: #372FA2;
+$primary-900: #312E80;
+
+$success-50: #F0FCF4;
+$success-100: #DCFCE6;
+$success-200: #BBF7D0;
+$success-300: #86EFAC;
+$success-400: #4ADD80;
+$success-500: #22C55E;
+$success-600: #17A34A;
+$success-700: #16803D;
+$success-800: #166533;
+$success-900: #14532D;
+
+$warning-50: #FFFBEB;
+$warning-100: #FEF3C7;
+$warning-200: #FDE689;
+$warning-300: #FDD34C;
+$warning-400: #FBBF23;
+$warning-500: #F59E08;
+$warning-600: #D97705;
+$warning-700: #B45309;
+$warning-800: #933F0E;
+$warning-900: #79350E;
+
+$destructive-50: #FEF2F2;
+$destructive-100: #FEE2E2;
+$destructive-200: #FECACA;
+$destructive-300: #FCA5A5;
+$destructive-400: #F87171;
+$destructive-500: #EF4344;
+$destructive-600: #DC2626;
+$destructive-700: #BA1B1B;
+$destructive-800: #991B1A;
+$destructive-900: #7F1D1D;
+
+$gradient-linear-01: linear-gradient(98.41deg, #FF5F6D 0%, #FFC371 100%);
+$gradient-linear-02: linear-gradient(98.41deg, #16BFFD 0%, #CB3066 100%);
+$gradient-linear-03: linear-gradient(98.41deg, #EECDA3 0%, #EF629F 100%);
+$gradient-linear-04: linear-gradient(98.41deg, #4CA1AF 0%, #C4E0E5 100%);
+$gradient-linear-05: linear-gradient(98.41deg, #F1F2B5 0%, #135058 100%, #135058 100%);
+$gradient-linear-06: linear-gradient(98.41deg, #FF6E7F 0%, #BFE9FF 100%);
+$gradient-linear-07: linear-gradient(98.41deg, #1D2B64 0%, #F8CDDA 100%);
+$gradient-linear-08: linear-gradient(98.41deg, #FC00FF 0%, #00B6DE 100%);
+$gradient-linear-09: linear-gradient(98.41deg, #02AAB0 0%, #00CDAC 100%);
+$gradient-linear-10: linear-gradient(98.41deg, #4568DC 0%, #B06AB3 100%);
+
+$drop-shadow-xsmall: 0px 1px 2px rgba(16, 24, 40, 0.05);
+$drop-shadow-small: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px -1px rgba(16, 24, 40, 0.1);
+$drop-shadow-medium: 0px 4px 6px -1px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.1);
+$drop-shadow-large: 0px 10px 15px -3px rgba(16, 24, 40, 0.1), 0px 4px 6px -4px rgba(16, 24, 40, 0.1);
+$drop-shadow-xlarge: 0px 20px 25px -5px rgba(16, 24, 40, 0.1), 0px 8px 10px -6px rgba(16, 24, 40, 0.1);
+$drop-shadow-xxlarge: 0px 25px 50px -12px rgba(16, 24, 40, 0.25);
+
