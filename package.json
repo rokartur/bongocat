@@ -1,0 +1,26 @@
+{
+  "name": "bongocat",
+  "private": true,
+  "version": "5.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --mode production --assetsDir . --outDir dist --base /",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "dayjs": "^1.11.7",
+    "gsap": "^3.11.5",
+    "preact": "^10.13.2",
+    "preact-async-route": "^2.2.1",
+    "preact-router": "^4.1.0",
+    "react": "^18.2.0",
+    "sass": "^1.62.0",
+    "use-local-storage": "^3.0.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.5.0",
+    "vite": "^4.3.9"
+  }
+}

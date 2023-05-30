@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mainLoadingAlert {
+  width: 100%;
+
+  inset: 45vh 0 0 0;
+  position: relative;
+  z-index: 0;
+
+  display: flex;
+  justify-content: center;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: .5rem;
+  color: white;
+
+  animation: pulseOpacityFade 2.5s infinite;
+}
+
+@keyframes pulseOpacityFade {
+  0%, 10%, 20% { opacity: 0 }
+  50% { opacity: 1 }
+  60% { opacity: 1 }
+  80%, 90%, 100% { opacity: 0 }
+}
+
+.video {
+  width: 1280px;
+  height: 720px;
+
+  position: relative;
+  z-index: 1;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.mainButton {
+  padding: 14px 18px;
+
+  width: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #040404;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: white;
+
+  transition: box-shadow .2s;
+
+  &:hover {
+    box-shadow: 3px 3px white;
+  }
+}

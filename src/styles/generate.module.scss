@@ -1,0 +1,386 @@
+.mainContainer {
+  margin: 0 auto;
+  padding: 64px;
+
+  width: 100%;
+  max-width: 80rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 64px;
+
+  @media screen and (max-width: 1366px) {
+    padding: 64px 32px;
+
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+
+    .preview {
+      width: 380px;
+      height: 380px;
+
+      outline: 2px solid white;
+      border-radius: 16px;
+      overflow: clip;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (max-width: 610px) {
+        width: auto;
+        height: auto;
+      }
+
+      .avatar {
+        width: 380px;
+        height: 380px;
+
+        @media screen and (max-width: 610px) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .avatarActions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+
+      div {
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          transition: transform .2s;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .bongoSocialMedia {
+      margin: 48px 0 0 0;
+
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+
+      a {
+        min-width: 147px;
+
+        padding: 8px 16px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        border-radius: 8px;
+        background-color: #040404;
+        border: 1px solid white;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: white;
+
+        transition: transform .2s, box-shadow .2s;
+
+        &:hover {
+          box-shadow: 3px 3px white;
+        }
+
+        &:active {
+          transform: translate(4px, 4px);
+
+          box-shadow: 0 0 white;
+        }
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        @media screen and (max-width: 610px) {
+          width: 100%;
+
+          justify-content: start;
+        }
+      }
+    }
+  }
+}
+
+.resetClicked,
+.randomClicked {
+  animation: rotate .6s;
+}
+
+@keyframes rotate {
+  25% { transform: rotate(-20deg) }
+  100% { transform: rotate(-20deg+380deg) }
+}
+
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .editList {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media screen and (max-width: 1366px) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 610px) {
+      flex-direction: column;
+    }
+
+    .editButton {
+      padding: 14px 18px;
+
+      width: max-content;
+
+      display: flex;
+      justify-content: left;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 100%;
+      color: white;
+      user-select: none;
+
+      transition: transform .2s, box-shadow .2s, color .2s;
+
+      &:hover {
+        box-shadow: 4px 4px white;
+      }
+
+      &:active {
+        transform: translate(3px, 3px);
+
+        box-shadow: 0 0 white;
+      }
+
+      @media screen and (max-width: 610px) {
+        width: 100%;
+      }
+    }
+
+    .editButtonActive {
+      @extend .editButton;
+
+      background-color: white;
+      color: #040404;
+
+      &:hover {
+        box-shadow: 0 0 white;
+      }
+    }
+  }
+
+  .editContent {
+    width: 100%;
+    min-width: 777px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media screen and (max-width: 1366px) {
+      min-width: unset;
+    }
+
+    .editSelectSolidOrGradient {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      @media screen and (max-width: 1366px) {
+        justify-content: center;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: white;
+      }
+
+      .editToggleButtonZero {
+        padding: 4px;
+        width: 42px;
+
+        display: flex;
+        align-items: center;
+
+        background: none;
+        border: 2px solid #FE481C;
+        border-radius: 8px;
+        cursor: pointer;
+
+        transition: transform .2s;
+
+        &:active {
+          transform: scale(.9);
+
+          .editToggleButtonDot {
+            transform: translateX(18px);
+          }
+        }
+
+        .editToggleButtonDot {
+          width: 12px;
+          height: 12px;
+          background: #FE481C;
+          border-radius: 4px;
+
+          transition: transform .2s, background .2s, border-radius .2s;
+        }
+      }
+
+      .editToggleButtonOne {
+        @extend .editToggleButtonZero;
+
+        .editToggleButtonDot {
+          transform: translateX(18px);
+        }
+
+        &:active {
+          transform: scale(.9);
+
+          .editToggleButtonDot {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+
+    .editColorInputsContainer {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      div {
+        width: 245px;
+        height: 130px;
+
+        min-height: 130px;
+        max-height: 130px;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 180px;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        color: white;
+        border-radius: 8px;
+
+        input[type=color] {
+          width: 100%;
+          height: 100%;
+
+          border: white;
+          background: none;
+          cursor: pointer;
+
+          &:hover,
+          &:focus {
+            &::-webkit-color-swatch {
+              box-shadow: 4px 4px white;
+            }
+          }
+
+          &::-webkit-color-swatch {
+            border: 1px solid white;
+            border-radius: 12px;
+
+            transition: box-shadow .2s;
+          }
+        }
+      }
+
+      .editSelectAvatarPreview {
+        width: 196px;
+        height: 196px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 240px;
+
+        background: none;
+        outline: 4px solid transparent;
+        border: 1px solid white;
+        border-radius: 8px;
+        cursor: pointer;
+
+        transition: transform .2s, box-shadow .2s, border .2s, outline .2s;
+
+        &:hover {
+          box-shadow: 4px 4px white;
+        }
+
+        &:active {
+          transform: translate(4px, 4px);
+          box-shadow: 0 0 white;
+        }
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .editSelectAvatarPreviewActive {
+        @extend .editSelectAvatarPreview;
+
+        outline: 2px solid #FE481C;
+        border: 1px solid #FE481C;
+
+        &:hover {
+          box-shadow: 0 0 white;
+        }
+      }
+    }
+  }
+}
