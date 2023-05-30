@@ -323,18 +323,25 @@
           background: none;
           cursor: pointer;
 
-          &:hover,
-          &:focus {
+          &::-webkit-color-swatch {
+            border: 1px solid white;
+            border-radius: 12px;
+
+            transition: transform .2s, box-shadow .2s;
+          }
+
+          &:hover {
             &::-webkit-color-swatch {
               box-shadow: 4px 4px white;
             }
           }
 
-          &::-webkit-color-swatch {
-            border: 1px solid white;
-            border-radius: 12px;
+          &:active {
+            &::-webkit-color-swatch {
+              transform: translate(4px, 4px);
 
-            transition: box-shadow .2s;
+              box-shadow: 0 0 white;
+            }
           }
         }
       }
