@@ -25,6 +25,10 @@
   color: white;
 
   animation: pulseOpacityFade 2.5s infinite;
+
+  @media screen and (max-width: 830px) {
+    inset: 15vh 0 0 0;
+  }
 }
 
 @keyframes pulseOpacityFade {
@@ -45,7 +49,7 @@
   object-position: center;
 
   @media screen and (max-width: 830px) {
-    width: 200%;
+    width: 100%;
     height: auto;
   }
 }
