@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const App = () => {
     return (
         <Router>
-            <AsyncRoute path={import.meta.env.BASE_URL} component={Generate}/>
+            <AsyncRoute path={"/"} component={Generate}/>
             <NotFound default/>
         </Router>
     );

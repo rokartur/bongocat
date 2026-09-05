@@ -24,9 +24,7 @@ jobs:
           node-version: 20
           cache: yarn
       - run: yarn install --frozen-lockfile
-      - run: yarn vite build --mode production --assetsDir . --outDir dist --base $BASE
-        env:
-          BASE: /${{ github.event.repository.name }}/
+      - run: yarn build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
